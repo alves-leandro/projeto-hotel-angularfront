@@ -1,0 +1,46 @@
+@import '../../../../../assets/styles/vars';
+
+.component-container {
+  height: 100%;
+  width: 100%;
+  padding: 1.25rem; // 20px
+
+  .room-card {
+    .card-image {
+      height: 15rem; // 250px
+      width: 15rem; // 250px
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        height: 12rem; // 200px
+        width: 12rem; // 200px
+      }
+    }
+
+    .card-about {
+      height: 12rem; // 200px
+      width: 12rem; // 200px
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.25rem; // 20px
+
+      .custom-card-content {
+        overflow: auto;
+      }
+    }
+
+    .card-value {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25rem; // 20px
+      font-size: 1.25rem; // 20px
+      font-weight: bold;
+      color: white;
+      background-color: $primary;
+    }
+  }
+}

@@ -1,0 +1,57 @@
+<div class="promotion-container" fxLayout="column">
+  <div fxLayoutAlign="end">
+    <button
+      class="createPromotionButton"
+      mat-raised-button
+      color="primary"
+      (click)="openCreatePromotionDialog()"
+    >
+      Create Promotion
+    </button>
+  </div>
+
+  <div
+    class="card-container"
+    fxLayout="row wrap"
+    fxLayoutGap="16px"
+    fxLayout.xs="column"
+    fxLayoutAlign.xs="center"
+  >
+    <!-- Loop through promotions and display them -->
+    <mat-card
+      class="promotion-card"
+      *ngFor="let promotion of promotions"
+      fxFlex="calc(33.33% - 16px)"
+    >
+      <mat-card-header>
+        <div fxLayout="column" class="card-header">
+          <mat-card-title>{{ promotion.name }}</mat-card-title>
+          <mat-card-subtitle>{{ promotion.details }}</mat-card-subtitle>
+        </div>
+      </mat-card-header>
+      <mat-card-content fxFlex fxFlexAlign="center center">
+        <p>Value: {{ promotion.value | currency: 'BRL' }}</p>
+        <p>
+          Dates: {{ promotion.initialDate | date }} -
+          {{ promotion.endDate | date }}
+        </p>
+      </mat-card-content>
+      <mat-card-actions fxLayout="row" fxLayoutAlign="space-around center">
+        <button
+          mat-icon-button
+          color="primary"
+          (click)="openUpdatePromotionDialog(promotion.id)"
+        >
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button
+          mat-icon-button
+          color="warn"
+          (click)="onDeleteClick(promotion.id)"
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

@@ -1,0 +1,247 @@
+<app-navbar />
+
+<section class="container header">
+  <div class="title-header">
+    <h1>SEJAM TODOS MUITO BEM VINDOS!</h1>
+  </div>
+</section>
+
+<section class="container wellcome" fxLayout fxLayout.xs="column">
+  <div class="wellcome-left" fxFlex="60%">
+    <div class="title-wellcome">
+      <h1>CHEGAMOS PARA FICAR!</h1>
+      <h4>O HOTEL DOS SEUS SONHOS AGORA É REALIDADE!</h4>
+    </div>
+    <p class="text-welcome">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem,
+      possimus facilis sunt magnam porro placeat quis totam architecto officia
+      error quam eum, odit voluptate iure ducimus laudantium optio laboriosam
+      accusantium! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      Dolorem voluptatem, ad tenetur tempore voluptas non, asperiores qui
+      recusandae cum dolore voluptates quisquam perspiciatis quia quos a
+      provident deleniti mollitia voluptate.
+    </p>
+    <p class="text-welcome">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem,
+      possimus facilis sunt magnam porro placeat quis totam architecto officia
+      error quam eum, odit voluptate iure ducimus laudantium optio laboriosam
+      accusantium! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      Dolorem voluptatem, ad tenetur tempore voluptas non, asperiores qui
+      recusandae cum dolore voluptates quisquam perspiciatis quia quos a
+      provident deleniti mollitia voluptate.
+    </p>
+  </div>
+  <div class="welcome-right" fxFlex="40%">
+<img src="assets/images/doorman-standing-outside-hotel.webp" alt="imagem da entrada">
+  </div>
+</section>
+
+<section class="container rooms">
+  <div class="rooms-title">
+    <h1>QUARTOS</h1>
+    <h4>CONHEÇAM NOSSOS APARTAMENTOS</h4>
+  </div>
+
+  <div
+    class="card-container"
+    fxLayout="row"
+    fxLayout.xs="column"
+    fxLayoutGap="16px"
+    fxLayout.xs="column"
+  >
+    <mat-card>
+      <div class="room-card">
+        <div class="card-image">
+          <img
+            mat-card-xl-image
+            [src]="'assets/images/rooms/standard-1.jpg'"
+            alt="Room Image"
+          />
+        </div>
+
+        <div class="card-about">
+          <mat-card-header class="custom-card-title">
+            <mat-card-title>STANDARD</mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="custom-card-content">
+            <p>
+              OFERECEM CONFORTO BÁSICO PADRÃO DE HOTELARIA AOS CLIENTES COM
+              CLIMATIZAÇÃO (CENTRAL DE AR), MESA DE TRABALHO, FRIGOBAR, TV,
+              WI-FI, CAFÉ DA MANHÃ, BANHEIRO COM CHUVEIRO ELÉTRICO, VAGA DE
+              GARAGEM EXCLUSIVA.
+            </p>
+          </mat-card-content>
+        </div>
+      </div>
+    </mat-card>
+
+    <mat-card>
+      <div class="room-card">
+        <div class="card-image">
+          <img
+            mat-card-xl-image
+            [src]="'assets/images/rooms/executivo.jpg'"
+            alt="Room Image"
+          />
+        </div>
+
+        <div class="card-about">
+          <mat-card-header>
+            <mat-card-title class="custom-card-title">EXECUTIVO</mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="custom-card-content">
+            <p>
+              CONFORTO SUPERIOR PADRÃO DE HOTELARIA AOS CLIENTES COM
+              CLIMATIZAÇÃO (CENTRAL DE AR), MESA DE TRABALHO, FRIGOBAR COM
+              DISPOSIÇÃO DE ITENS PARA COMPRA, TV, WI-FI, CAFÉ DA MANHÃ,
+              BANHEIRO COM CHUVEIRO ELÉTRICO, SKY (TV À CABO), VAGA DE GARAGEM
+              EXCLUSIVA.
+            </p>
+          </mat-card-content>
+        </div>
+      </div>
+    </mat-card>
+
+    <mat-card>
+      <div class="room-card">
+        <div class="card-image">
+          <img
+            mat-card-xl-image
+            [src]="'assets/images/rooms/quarto-luxo-3.jpg'"
+            alt="Room Image"
+          />
+        </div>
+
+        <div class="card-about">
+          <mat-card-header>
+            <mat-card-title class="custom-card-title">LUXO</mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="custom-card-content">
+            <p>
+              APARTAMENTOS QUE OFERECEMOS ACIMA DO SUPERIOR. ADAPTADOS PARA
+              PÚBLICOS QUE OPTAM POR ACOMODAÇÃO ESPECIAL: QUARTO MAIS AMPLO,
+              DECORAÇÃO ADAPTADA PARA OCASIÕES E EXIGÊNCIA DO HÓSPEDE COMO POR
+              EXEMPLO NÚPCIAS E/OU OUTRAS EXIGÊNCIAS ESPECIAIS. CLIMATIZAÇÃO
+              (CENTRAL DE AR), MESA DE TRABALHO, CAMARIM CONFORTO, FRIGOBAR COM
+              DISPOSIÇÃO DE ITENS PARA COMPRA, TV, WI-FI, CAFÉ DA MANHÃ,
+              CHUVEIRO ELÉTRICO, SKY (TV À CABO), CAFETEIRA EXCLUSIVA (CÁPSULA
+              VENDA À PARTE), SECADOR DE CABELO, VENDA DE BEBIDAS ESPECIAIS NO
+              QUARTO, VAGA DE GARAGEM EXCLUSIVA.
+            </p>
+          </mat-card-content>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</section>
+
+<section class="container comments">
+  <div
+    class="card-comments-container"
+    fxLayout="row"
+    fxLayout.xs="column"
+    fxLayoutGap="16px"
+  >
+    <mat-card class="comment-card">
+      <mat-card-header fxLayout>
+        <div mat-card-avatar class="comment-header-image">
+          <img src="assets/images/comments/tonystark.webp" alt="Tony Stark">
+        </div>
+        <mat-card-title>Tony Stark</mat-card-title>
+        <mat-card-subtitle>Empresário</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>
+          "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, rerum! Delectus pariatur perspiciatis quae at repellendus explicabo. Non, veritatis omnis magni harum temporibus, nam, ducimus eos iure laboriosam dolor atque."
+        </p>
+        <p>
+          "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, rerum! Delectus pariatur perspiciatis quae at repellendus explicabo. Non, veritatis omnis magni harum temporibus, nam, ducimus eos iure laboriosam dolor atque."
+        </p>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="comment-card">
+      <mat-card-header fxLayout>
+        <div mat-card-avatar class="comment-header-image">
+          <img src="assets/images/comments/mattmurdock.webp" alt="Matt Murdock">
+        </div>
+        <mat-card-title>Matt Murdock</mat-card-title>
+        <mat-card-subtitle>Advogado</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>
+          "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, rerum! Delectus pariatur perspiciatis quae at repellendus explicabo. Non, veritatis omnis magni harum temporibus, nam, ducimus eos iure laboriosam dolor atque."
+        </p>
+        <p>
+          "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, rerum! Delectus pariatur perspiciatis quae at repellendus explicabo. Non, veritatis omnis magni harum temporibus, nam, ducimus eos iure laboriosam dolor atque."
+        </p>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="comment-card">
+      <mat-card-header fxLayout>
+        <div mat-card-avatar class="comment-header-image">
+          <img src="assets/images/comments/peterparker.webp" alt="Peter Parker">
+        </div>
+        <mat-card-title>Peter Parker</mat-card-title>
+        <mat-card-subtitle>Fotógrafo</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>
+          "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, rerum! Delectus pariatur perspiciatis quae at repellendus explicabo. Non, veritatis omnis magni harum temporibus, nam, ducimus eos iure laboriosam dolor atque."
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</section>
+
+<section class="container advertising" fxLayout>
+  <div class="advertising-text">
+    <p>SIGA E ACOMPANHE AS NOVIDADES EM NOSSA GALERIA DE FOTOS DO INSTAGRAM. @THEHOTEL</p>
+  </div>
+</section>
+
+<!-- <section class="container about" fxLayout fxLayoutGap="16px" fxLayout.xs="column">
+  <div class="about_cover" fxFlex="50%">
+    <img src="assets/images/sino-do-hotel_1203-2898.webp" alt="sino">
+  </div>
+  <div class="about_desc" fxLayout="column" fxFlex="50%">
+    <h2>About</h2>
+    <p>
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      Lorem Ipsum has been the industry's. Lorem Ipsum is simply dummy text of
+      the printing and typesetting industry. Lorem Ipsum has been the industry's
+      standard dummy Lorem Ipsum is simply dummy text of the printing and
+      typesetting industry.
+    </p>
+    <div class="desc_btn">
+      <button mat-raised-button routerLink="/about">Saiba mais</button>
+    </div> 
+  </div>
+</section> -->
+
+<section class="container events" fxLayout>
+  <div class="events-text" fxLayout>
+    <h2>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium cumque ut autem blanditiis similique debitis, provident ullam perspiciatis iste eos asperiores alias labore, voluptatum aspernatur quasi corrupti. Tenetur, placeat similique.
+    </h2>
+  </div>
+</section>
+
+<section class="footer" fxLayout="column">
+  <div class="footer_top" fxLayout fxFlex="70%">
+    <a routerLink="/home" class="footer_logo">
+      <div class="logo-line">THE</div>
+      <div class="logo-line">HOTEL</div>
+    </a>
+
+    <button mat-raised-button color="primary" (click)="redirectToAdminArea()">
+      Área Reservada
+    </button>
+  </div>
+  
+  
+  <div class="footer_text" fxLayout fxFlex="30%">
+    <span>2023 © Todos os direitos reservados</span>
+  </div>
+</section>

@@ -1,0 +1,43 @@
+@import 'vars.scss';
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  --navbg: #fff;
+
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+ul,
+li,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #a4a4a4;;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 20px 12%;
+  background-color: var(
+    --navbg
+  );
+
+  @media (max-width: 1000px) {
+    padding: 14px 2%;
+    transition: 0.2s;
+  }
+}

@@ -1,0 +1,98 @@
+<div class="main-container" fxLayout fxLayoutAlign="center center">
+  <div fxLayout>
+    <form
+    (ngSubmit)="onSubmit()"
+    #bookingForm="ngForm"
+    fxLayout
+    fxLayout.xs="column"
+    fxLayoutAlign="center center"
+    >
+      <div>
+        <p *ngIf="checkinDate && checkoutDate">
+          Estada: {{ calculateDateRange() }} noites
+        </p>
+        <mat-form-field>
+          <mat-label>Selecione as datas</mat-label>
+          <mat-date-range-input [rangePicker]="picker">
+            <input
+              matStartDate
+              placeholder="Check-In"
+              [(ngModel)]="checkinDate"
+              name="checkinDate"
+            />
+            <input
+              matEndDate
+              placeholder="Check-Out"
+              [(ngModel)]="checkoutDate"
+              name="checkoutDate"
+            />
+          </mat-date-range-input>
+          <mat-datepicker-toggle
+            matIconSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-date-range-picker
+            #picker
+            (dateInput)="onDateRangeInput($event)"
+          ></mat-date-range-picker>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <p>1 quarto, {{ calculateTotalGuests() }} hóspedes.</p>
+        <div fxLayout fxLayout.xs="column">
+          <mat-form-field>
+            <mat-label>Adultos</mat-label>
+            <mat-select [(ngModel)]="adultsCount" name="adultsCount">
+              <mat-option
+                *ngFor="let value of counterArrayAdults(4)"
+                [value]="value"
+              >
+                {{ value }} Adulto{{ value !== 1 ? 's' : '' }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Crianças</mat-label>
+            <mat-select [(ngModel)]="childrenCount" name="childrenCount">
+              <mat-option
+                *ngFor="let value of counterArrayChildrens(3)"
+                [value]="value"
+              >
+                {{ value }} Criança{{ value !== 1 ? 's' : '' }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <button mat-raised-button color="primary" type="submit">Buscar</button>
+    </form>
+  </div>
+</div>
+
+<div *ngIf="rooms.length === 0">
+  <div class="empty-container">
+    <div class="empty-rooms-card">
+      <div class="empty-image"></div>
+      <div class="empty-content">
+        <div class="empty-title"></div>
+        <div class="empty-line"></div>
+        <div class="empty-line"></div>
+        <div class="empty-line"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-container *ngIf="rooms.length > 0">
+  <app-booking-room-card
+    *ngFor="let room of rooms"
+    [room]="room"
+    [checkinDate]="checkinDate"
+    [checkoutDate]="checkoutDate"
+    [adultsCount]="adultsCount"
+    [childrenCount]="childrenCount"
+  ></app-booking-room-card>
+</ng-container>

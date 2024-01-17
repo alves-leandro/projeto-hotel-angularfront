@@ -1,0 +1,49 @@
+<div class="transaction-container" fxLayout="column" fxFill>
+  <div fxLayoutAlign="end">
+    <button
+      class="createTransactionButton"
+      mat-raised-button
+      color="primary"
+      (click)="openCreateTransactionDialog()"
+    >
+      Create Transaction
+    </button>
+  </div>
+
+  <div
+    class="card-container"
+    fxLayout="row wrap"
+    fxLayoutGap="16px"
+    fxLayout.xs="column"
+    fxLayoutAlign.xs="center"
+  >
+    <!-- Loop through transactions and display them -->
+    <mat-card
+      class="transaction-card"
+      *ngFor="let transaction of transactions"
+      fxFlex="calc(33.33% - 16px)"
+    >
+      <mat-card-header>
+        <div fxLayout="column" class="card-header">
+          <mat-card-title>Transaction ID: {{ transaction.id }}</mat-card-title>
+        </div>
+      </mat-card-header>
+      <mat-card-content fxFlex fxFlexAlign="center center">
+        <p>Reservation ID: {{ transaction.reservationId }}</p>
+        <p>Price: {{ transaction.price | currency: 'BRL' }}</p>
+      </mat-card-content>
+      <mat-card-actions fxLayout="row" fxLayoutAlign="space-around center">
+        <button
+          mat-button
+          color="primary"
+          (click)="openUpdateTransactionDialog(transaction.id)"
+        >
+          Update
+        </button>
+        <button mat-button color="warn" (click)="onDeleteClick(transaction.id)">
+          Delete
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

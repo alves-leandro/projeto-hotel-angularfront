@@ -1,0 +1,63 @@
+<form
+  fxLayout="column"
+  (ngSubmit)="onSubmit()"
+  #updateForm="ngForm"
+  class="supplies-update-form"
+>
+  <mat-form-field>
+    <mat-label>Name:</mat-label>
+    <input
+      matInput
+      type="text"
+      id="name"
+      name="name"
+      [(ngModel)]="suppliesData.name"
+      required
+    />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Description:</mat-label>
+    <input
+      matInput
+      type="text"
+      id="description"
+      name="description"
+      [(ngModel)]="suppliesData.description"
+      required
+    />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Price:</mat-label>
+    <input
+      matInput
+      type="number"
+      id="price"
+      name="price"
+      [(ngModel)]="suppliesData.price"
+      required
+    />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Stock:</mat-label>
+    <input
+      matInput
+      type="number"
+      id="stock"
+      name="stock"
+      [(ngModel)]="suppliesData.stock"
+      required
+    />
+  </mat-form-field>
+
+  <button
+    mat-raised-button
+    color="primary"
+    type="submit"
+    [disabled]="updateForm.invalid"
+  >
+    Update Supplies
+  </button>
+</form>

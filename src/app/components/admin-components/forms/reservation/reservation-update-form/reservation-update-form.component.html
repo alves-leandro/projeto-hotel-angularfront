@@ -1,0 +1,23 @@
+<form fxLayout="column" (ngSubmit)="onSubmit()" #updateForm="ngForm" class="reservation-update-form">
+    <mat-form-field>
+      <mat-label>User ID:</mat-label>
+      <input matInput type="text" id="userId" name="userId" [(ngModel)]="reservationData.userId" required>
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Room ID:</mat-label>
+      <input matInput type="text" id="roomId" name="roomId" [(ngModel)]="reservationData.roomId" required>
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Check-In Date:</mat-label>
+      <input matInput type="date" id="checkInDate" name="checkInDate" [(ngModel)]="reservationData.checkInDate" required>
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Check-Out Date:</mat-label>
+      <input matInput type="date" id="checkOutDate" name="checkOutDate" [(ngModel)]="reservationData.checkOutDate" required>
+    </mat-form-field>
+  
+    <button mat-raised-button color="primary" type="submit" [disabled]="updateForm.invalid">Update Reservation</button>
+</form>

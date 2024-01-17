@@ -1,0 +1,108 @@
+<div class="sidebar-container">
+  <mat-nav-list>
+    <div
+      class="sidebar-elements-div"
+      fxLayout="column"
+      fxLayoutAlign="start stretch"
+    >
+      <div class="profile-card">
+        <div class="header">
+          <h2>{{ userName }}</h2>
+          <h4>{{ userEmail }}</h4>
+          <mat-divider></mat-divider>
+        </div>
+      </div>
+
+      <h2 matSubheader>Controllers</h2>
+      <div class="controllers" fxLayout="column" fxLayoutAlign="center">
+        <a
+          mat-list-item
+          role="button"
+          tabindex="0"
+          (click)="selectForm('allRooms')"
+          (keydown.enter)="selectForm('allRooms')"
+          (keydown.space)="selectForm('allRooms')"
+        >
+          Room Control
+        </a>
+
+        <a
+          mat-list-item
+          role="button"
+          tabindex="0"
+          (click)="selectForm('allReservation')"
+          (keydown.enter)="selectForm('allReservation')"
+          (keydown.space)="selectForm('allReservation')"
+        >
+          Reservation Control
+        </a>
+
+        <a
+          mat-list-item
+          role="button"
+          tabindex="0"
+          (click)="selectForm('allUsers')"
+          (keydown.enter)="selectForm('allUsers')"
+          (keydown.space)="selectForm('allUsers')"
+        >
+          User Control
+        </a>
+
+        <a
+          mat-list-item
+          role="button"
+          tabindex="0"
+          (click)="selectForm('allEmployees')"
+          (keydown.enter)="selectForm('allEmployees')"
+          (keydown.space)="selectForm('allEmployees')"
+        >
+          Employee Control
+        </a>
+
+        <a
+          mat-list-item
+          role="button"
+          tabindex="0"
+          (click)="selectForm('allPromotions')"
+          (keydown.enter)="selectForm('allPromotions')"
+          (keydown.space)="selectForm('allPromotions')"
+        >
+          Promotion Control
+        </a>
+
+        <a
+          mat-list-item
+          role="button"
+          tabindex="0"
+          (click)="selectForm('allKitchen-dishes')"
+          (keydown.enter)="selectForm('allKitchen-dishes')"
+          (keydown.space)="selectForm('allKitchen-dishes')"
+        >
+          Kitchen Dishes Control
+        </a>
+
+        <a
+          mat-list-item
+          role="button"
+          tabindex="0"
+          (click)="selectForm('allSupplies')"
+          (keydown.enter)="selectForm('allSupplies')"
+          (keydown.space)="selectForm('allSupplies')"
+        >
+          Supplies Control
+        </a>
+      </div>
+
+      <div class="buttonDiv" fxLayout fxLayoutAlign="flex-end">
+        <button
+          mat-list-item
+          role="button"
+          tabindex="0"
+          (click)="logout()"
+        >
+          Log out
+        </button>
+      </div>
+    </div>
+  </mat-nav-list>
+</div>

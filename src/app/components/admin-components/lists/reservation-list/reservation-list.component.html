@@ -1,0 +1,98 @@
+<div class="reservation-container" fxLayout="column" fxFill>
+  <div class="topBtnDiv" fxLayoutAlign="end">
+    <button
+      class="createReservationButton"
+      mat-raised-button
+      color="primary"
+      (click)="openCreateReservationDialog()"
+    >
+      Create Reservation
+    </button>
+    <!-- Botão para transaction-list -->
+    <button mat-raised-button color="primary" (click)="openTransactionList()">
+      All Transactions
+    </button>
+  </div>
+
+  <div class="list-container">
+    <mat-table mat-table [dataSource]="reservations" class="mat-elevation-z8">
+      <!-- Reservation ID Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>Reservation ID</th>
+        <td mat-cell *matCellDef="let reservation">{{ reservation.id }}</td>
+      </ng-container>
+
+      <!-- User ID Column -->
+      <ng-container matColumnDef="userId">
+        <th mat-header-cell *matHeaderCellDef>User ID</th>
+        <td mat-cell *matCellDef="let reservation">{{ reservation.userId }}</td>
+      </ng-container>
+
+      <!-- Room ID Column -->
+      <ng-container matColumnDef="roomId">
+        <th mat-header-cell *matHeaderCellDef>Room ID</th>
+        <td mat-cell *matCellDef="let reservation">{{ reservation.roomId }}</td>
+      </ng-container>
+
+      <!-- Dates Column -->
+      <ng-container matColumnDef="dates">
+        <th mat-header-cell *matHeaderCellDef>Dates</th>
+        <td mat-cell *matCellDef="let reservation">
+          {{ reservation.initialDate | date }} -
+          {{ reservation.endDate | date }}
+        </td>
+      </ng-container>
+
+      <!-- Actions Column -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Actions</th>
+        <td mat-cell *matCellDef="let reservation">
+          <button
+            mat-icon-button
+            color="primary"
+            (click)="openUpdateReservationDialog(reservation.id)"
+          >
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button
+            mat-icon-button
+            color="warn"
+            (click)="onDeleteClick(reservation.id)"
+          >
+            <mat-icon>delete</mat-icon>
+          </button>
+
+          <!-- Botão para create-transaction -->
+          <button
+            mat-icon-button
+            color="primary"
+            (click)="openCreateTransactionDialog(reservation.id)"
+          >
+            <mat-icon>attach_money</mat-icon>
+          </button>
+
+          <!-- Botão para reservation-dishes-create-form -->
+          <button
+            mat-icon-button
+            color="primary"
+            (click)="openCreateDishReservationForm(reservation.id)"
+          >
+            <mat-icon>cookie</mat-icon>
+          </button>
+
+          <!-- Botão para reservation-supplies-create-form -->
+          <button
+            mat-icon-button
+            color="primary"
+            (click)="openCreateSupplyReservationForm(reservation.id)"
+          >
+            <mat-icon>inventory</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </mat-table>
+  </div>
+</div>

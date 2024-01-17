@@ -1,0 +1,28 @@
+<form fxLayout="column" (ngSubmit)="onSubmit()" #updateForm="ngForm" class="promotion-update-form">
+    <mat-form-field>
+      <mat-label>Name:</mat-label>
+      <input matInput type="text" id="name" name="name" [(ngModel)]="promotionData.name" required>
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Description:</mat-label>
+      <input matInput type="text" id="description" name="description" [(ngModel)]="promotionData.description" required>
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Discount:</mat-label>
+      <input matInput type="number" id="discount" name="discount" [(ngModel)]="promotionData.discount" required>
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Start Date:</mat-label>
+      <input matInput type="date" id="startDate" name="startDate" [(ngModel)]="promotionData.startDate" required>
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>End Date:</mat-label>
+      <input matInput type="date" id="endDate" name="endDate" [(ngModel)]="promotionData.endDate" required>
+    </mat-form-field>
+  
+    <button mat-raised-button color="primary" type="submit" [disabled]="updateForm.invalid">Update Promotion</button>
+</form>

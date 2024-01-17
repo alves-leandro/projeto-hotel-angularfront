@@ -1,0 +1,29 @@
+<header class="navbar">
+  <a routerLink="/home" class="navbar_logo">
+    <div class="logo-line">THE</div>
+    <div class="logo-line">HOTEL</div>
+  </a>
+  <ul class="navbar_links" [fxShow.lt-md]="isShown" fxHide.lt-md #navmenu>
+    <li><a routerLink="/home">HOME</a></li>
+    <li><a routerLink="/about">SOBRE NÓS</a></li>
+    <li><a routerLink="/accommodation">QUARTOS</a></li>
+    <li><a routerLink="/hotel">RESERVE JÁ</a></li>
+  </ul>
+  <div class="navbar_main">
+    <ng-container *ngIf="!hasToken(); else logoutButton">
+      <a href="/login" mat-button>ENTRAR</a>
+    </ng-container>
+    <ng-template #logoutButton>
+      <a href="/" mat-button (click)="logout()">SAIR</a>
+    </ng-template>
+    <button
+      type="button"
+      class="navbar_main_menu"
+      fxShow="true"
+      fxHide.gt-sm
+      (click)="toggleShow()"
+    >
+      <mat-icon>{{ menuIcon }}</mat-icon>
+    </button>
+  </div>
+</header>

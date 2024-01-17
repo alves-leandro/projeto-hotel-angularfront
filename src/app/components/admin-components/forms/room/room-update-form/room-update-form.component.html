@@ -1,0 +1,43 @@
+<form fxLayout="column" (ngSubmit)="onSubmit()" #updateForm="ngForm" class="room-update-form">
+    <mat-form-field>
+      <mat-label>Number:</mat-label>
+      <input matInput type="number" id="number" name="number" [(ngModel)]="roomData.number" required>
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Status:</mat-label>
+      <mat-select id="status" name="status" [(ngModel)]="roomData.status" required>
+        <mat-option *ngFor="let statusOption of statusOptions" [value]="statusOption">{{ statusOption }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Type:</mat-label>
+      <mat-select id="type" name="type" [(ngModel)]="roomData.type" required>
+        <mat-option *ngFor="let typeOption of typeOptions" [value]="typeOption">{{ typeOption }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Capacity Adults:</mat-label>
+      <input matInput type="number" id="capacityAdults" name="capacityAdults" [(ngModel)]="roomData.capacityAdults" required>
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Capacity Children:</mat-label>
+      <input matInput type="number" id="capacityChildren" name="capacityChildren" [(ngModel)]="roomData.capacityChildren" required>
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Image URL:</mat-label>
+      <input matInput type="text" id="imageUrl" name="imageUrl" [(ngModel)]="roomData.imageUrl" required>
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Value:</mat-label>
+      <input matInput type="number" id="value" name="value" [(ngModel)]="roomData.value" required>
+    </mat-form-field>
+  
+    <button mat-raised-button color="primary" type="submit" [disabled]="updateForm.invalid">Update Room</button>
+  </form>
+  

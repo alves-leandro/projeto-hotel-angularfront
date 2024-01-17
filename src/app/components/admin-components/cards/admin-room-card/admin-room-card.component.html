@@ -1,0 +1,25 @@
+<ng-container *ngIf="room">
+  <mat-card class="room-card" [ngClass]="getCardClass()">
+    <mat-card-header>
+      <div fxLayout class="card-header">
+        <mat-card-title>{{ room.number }}</mat-card-title>
+        <mat-card-subtitle>{{ room.type }}</mat-card-subtitle>
+      </div>
+    </mat-card-header>
+    <mat-card-content fxFlex fxFlexAlign="center center">
+      <p>
+        Capacity: Adults - {{ room.capacityAdults }}, Children -
+        {{ room.capacityChildren }}
+      </p>
+      <p>Value: {{ room.value | currency: 'BRL' }}</p>
+    </mat-card-content>
+    <mat-card-actions fxLayout="row" fxLayoutAlign="space-around center">
+      <button mat-icon-button color="primary" (click)="edit.emit(room)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button color="warn" (click)="delete.emit(room)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</ng-container>

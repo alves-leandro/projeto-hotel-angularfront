@@ -1,0 +1,39 @@
+<form
+  fxLayout="column"
+  (ngSubmit)="onSubmit()"
+  #updateForm="ngForm"
+  class="reservation-supplies-update-form"
+>
+  <mat-form-field>
+    <mat-label>Reservation ID</mat-label>
+    <input
+      matInput
+      type="text"
+      id="reservationId"
+      name="reservationId"
+      [(ngModel)]="reservationSupplyData.reservationId"
+      required
+    />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Supply ID</mat-label>
+    <input
+      matInput
+      type="text"
+      id="supplyId"
+      name="supplyId"
+      [(ngModel)]="reservationSupplyData.supplyId"
+      required
+    />
+  </mat-form-field>
+
+  <button
+    mat-raised-button
+    color="primary"
+    type="submit"
+    [disabled]="updateForm.invalid"
+  >
+    Update Reservation Supply
+  </button>
+</form>

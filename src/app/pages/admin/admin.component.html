@@ -1,0 +1,41 @@
+<mat-drawer-container fxFill>
+  <mat-drawer mode="side" opened>
+    <app-sidebar (formSelected)="onFormSelected($event)"></app-sidebar>
+  </mat-drawer>
+  <mat-drawer-content fxLayout="column" fxLayoutAlign="center center" style="height: calc(100vh - 120px);">
+    <ng-container *ngIf="selectedForm === 'allRooms'">
+      <!-- Conteúdo do formulário GET all Rooms -->
+      <app-room-list></app-room-list>
+    </ng-container>
+
+    <ng-container *ngIf="selectedForm === 'allReservation'">
+      <!-- Conteúdo do formulário GET all Reservation -->
+      <app-reservation-list></app-reservation-list>
+    </ng-container>
+
+    <ng-container *ngIf="selectedForm === 'allUsers'">
+      <!-- Conteúdo do formulário GET all Users -->
+      <app-user-list></app-user-list>
+    </ng-container>
+
+    <ng-container *ngIf="selectedForm === 'allEmployees'">
+      <!-- Conteúdo do formulário GET all Employees -->
+      <app-employee-list></app-employee-list>
+    </ng-container>
+
+    <ng-container *ngIf="selectedForm === 'allPromotions'">
+      <!-- Conteúdo do formulário GET all Promotions -->
+      <app-promotion-list></app-promotion-list>
+    </ng-container>
+
+    <ng-container *ngIf="selectedForm === 'allKitchen-dishes'">
+      <!-- Conteúdo do formulário GET all Kitchen Dishes -->
+      <app-kitchen-dishes-list></app-kitchen-dishes-list>
+    </ng-container>
+
+    <ng-container *ngIf="selectedForm === 'allSupplies'">
+      <!-- Conteúdo do formulário GET all Supplies -->
+      <app-supplies-list></app-supplies-list>
+    </ng-container>
+  </mat-drawer-content>
+</mat-drawer-container>

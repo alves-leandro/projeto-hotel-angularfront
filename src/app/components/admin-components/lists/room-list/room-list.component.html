@@ -1,0 +1,38 @@
+<div class="room-container" fxLayout="column">
+  <div fxLayoutAlign="end">
+    <button
+      class="createRoomButton"
+      mat-raised-button
+      color="primary"
+      (click)="openCreateRoomDialog()"
+    >
+      Create Room
+    </button>
+  </div>
+
+  <div
+    class="card-container"
+    fxLayout="row wrap"
+    fxLayoutGap="16px"
+    fxLayout.xs="column"
+    fxLayoutAlign.xs="center"
+  >
+    <mat-card
+      class="room-card"
+      *ngFor="let room of rooms"
+      fxFlex="calc(23.33% - 16px)"
+      [ngClass]="getCardClass(room.status)"
+      (click)="openRoomDetailsDialog(room)"
+    >
+      <mat-card-header>
+        <div fxLayout class="card-header">
+          <mat-card-title>{{ room.number }}</mat-card-title>
+          <mat-card-subtitle>{{ room.type }}</mat-card-subtitle>
+        </div>
+      </mat-card-header>
+      <mat-card-content fxFlex fxFlexAlign="center center">
+        <p>Value: {{ room.value | currency: 'BRL' }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

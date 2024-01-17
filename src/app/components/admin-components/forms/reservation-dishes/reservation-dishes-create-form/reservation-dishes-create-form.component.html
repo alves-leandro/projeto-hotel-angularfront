@@ -1,0 +1,41 @@
+<form
+  fxLayout="column"
+  (ngSubmit)="onSubmit()"
+  #createForm="ngForm"
+  class="reservation-dishes-create-form"
+>
+  <mat-form-field>
+    <mat-label>Reservation ID</mat-label>
+    <input
+      matInput
+      type="text"
+      id="reservationId"
+      name="reservationId"
+      [(ngModel)]="reservationDishData.reservationId"
+      required
+      readonly
+    />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Kitchen Dish</mat-label>
+    <mat-select
+      [(ngModel)]="reservationDishData.kitchenDishesId"
+      name="kitchenDishId"
+      required
+    >
+      <mat-option *ngFor="let dish of kitchenDishes" [value]="dish.id">
+        {{ dish.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button
+    mat-raised-button
+    color="primary"
+    type="submit"
+    [disabled]="createForm.invalid"
+  >
+    Create Reservation Dish
+  </button>
+</form>

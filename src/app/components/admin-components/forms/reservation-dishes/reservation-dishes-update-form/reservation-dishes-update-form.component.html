@@ -1,0 +1,39 @@
+<form
+  fxLayout="column"
+  (ngSubmit)="onSubmit()"
+  #updateForm="ngForm"
+  class="reservation-dishes-update-form"
+>
+  <mat-form-field>
+    <mat-label>Reservation ID</mat-label>
+    <input
+      matInput
+      type="text"
+      id="reservationId"
+      name="reservationId"
+      [(ngModel)]="reservationDishData.reservationId"
+      required
+    />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Kitchen Dishes ID</mat-label>
+    <input
+      matInput
+      type="text"
+      id="kitchenDishesId"
+      name="kitchenDishesId"
+      [(ngModel)]="reservationDishData.kitchenDishesId"
+      required
+    />
+  </mat-form-field>
+
+  <button
+    mat-raised-button
+    color="primary"
+    type="submit"
+    [disabled]="updateForm.invalid"
+  >
+    Update Reservation Dish
+  </button>
+</form>

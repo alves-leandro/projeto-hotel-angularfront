@@ -1,0 +1,43 @@
+<app-navbar />
+
+<div
+  class="container login-container"
+  fxLayout="column"
+  fxLayoutAlign="center center"
+>
+<div class="login-form">
+    <h2>Login</h2>
+
+    <form
+      (ngSubmit)="onSubmit()"
+      fxLayout="column"
+      fxLayoutAlign="center center"
+    >
+      <mat-form-field appearance="fill">
+        <mat-label>Email:</mat-label>
+        <input
+          matInput
+          type="email"
+          id="email"
+          name="email"
+          [(ngModel)]="email"
+          required
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Password:</mat-label>
+        <input
+          matInput
+          type="password"
+          id="password"
+          name="password"
+          [(ngModel)]="password"
+          required
+        />
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit">Login</button>
+    </form>
+  </div>
+</div>
