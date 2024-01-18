@@ -11,7 +11,7 @@ export class ApiService {
   constructor(private http: HttpClient) {
     this.apiUrl = window.location.origin === 'http://localhost:4200'
       ? 'http://localhost:3000'
-      : 'https://currency-alves-leandro.vercel.app/';
+      : 'https://currency-alves-leandro.vercel.app';
   }
 
   getApiUrl(): string {
