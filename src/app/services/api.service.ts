@@ -6,11 +6,13 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ApiService {
-  private apiUrl = 'https://currency-alves-leandro.vercel.app/';
+  private apiUrl: string;
 
-  // private apiUrl = 'http://localhost:3000';
-
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    this.apiUrl = window.location.origin === 'http://localhost:4200'
+      ? 'http://localhost:3000'
+      : 'https://currency-alves-leandro.vercel.app/';
+  }
 
   getApiUrl(): string {
     return this.apiUrl;
