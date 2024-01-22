@@ -12,7 +12,7 @@ export class ApiService {
     this.apiUrl =
       window.location.origin === 'http://localhost:4200'
         ? 'http://localhost:3000'
-        : 'https://currency-olive-eta.vercel.app';
+        : 'https://hotelhacka-api.onrender.com';
   }
 
   getApiUrl(): string {
